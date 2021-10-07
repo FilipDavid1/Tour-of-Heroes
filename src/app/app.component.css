@@ -1,8 +1,15 @@
+.card highlight-card card-small {
+    margin: 30%;
+}
+
+
+
 h1 {
     color: rebeccapurple;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 250%;
     padding-left: 60px;
+    
 }
 h2, h3 {
     color: palevioletred;
@@ -10,7 +17,7 @@ h2, h3 {
     font-weight: lighter;
 }
 body{
-    margin: 2em;
+    margin: 40px;
 }
 body, input[type = "text"], button {
     color:whitesmoke;
