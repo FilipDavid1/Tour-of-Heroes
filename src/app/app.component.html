@@ -344,10 +344,7 @@
     </svg>
 
     <h1>{{ title }}</h1>
-    <br>
-    <app-heroes></app-heroes>
-    <br>
-    <app-items></app-items>
+    
 
     <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
       <title>Rocket Ship Smoke</title>
@@ -432,12 +429,9 @@
 
   <!-- Terminal -->
   <div class="terminal" [ngSwitch]="selection.value">
-      <pre *ngSwitchDefault>ng generate component xyz</pre>
-      <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
-      <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
-      <pre *ngSwitchCase="'dependency'">ng add _____</pre>
-      <pre *ngSwitchCase="'test'">ng test</pre>
-      <pre *ngSwitchCase="'build'">ng build --prod</pre>
+     <app-heroes></app-heroes>
+     <br>
+     <app-items></app-items>
   </div>
 
   <!-- Links -->
