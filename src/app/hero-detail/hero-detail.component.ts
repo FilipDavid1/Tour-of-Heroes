@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
+import { Items } from '../mock-items';
 
 @Component({
   selector: 'app-hero-detail',
