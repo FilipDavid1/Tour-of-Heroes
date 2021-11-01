@@ -2,6 +2,7 @@ h2 {
     color: #A80000;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
+    text-align: center;
   }
   
   .clear {
@@ -11,8 +12,13 @@ h2 {
     padding: 1rem;
     border-radius: 4px;
     font-size: 1rem;
+    text-align: center;
   }
   .clear:hover {
     color: white;
     background-color: #42545C;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
   }

@@ -10,6 +10,7 @@ import { ItemsComponent } from './items/items.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MessagesComponent } from './messages/messages.component';
     ItemsComponent,
     HeroDetailComponent,
     ItemDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
