@@ -11,4 +11,11 @@ export const Items: Item[] = [
     {id: 18, name: 'Katana', price: 2050},
     {id: 19, name: 'Magic Wand', price: 10000},
     {id: 20, name: 'Gloves of Strange Words', price: 50000},
+];
+
+export const FItems: Item[] = [
+    {id: 11, name: 'Combat Knife', price: 100},
+    {id: 12, name: 'Helmet', price: 210},
+    {id: 13, name: 'Leather Boots', price: 85},
+    {id: 14, name: 'Hunter Knife', price: 320},
 ]

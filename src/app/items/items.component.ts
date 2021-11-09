@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message.service';
+import { FItems } from '../mock-items';
 
 
 
@@ -13,7 +14,7 @@ import { MessageService } from '../message.service';
 })
 export class ItemsComponent implements OnInit {
 
-  items: Item[] = [];
+  items = FItems;
 
   constructor(private itemService: ItemService, private messageService: MessageService ) { }
 

@@ -5,5 +5,14 @@
       <label for="hero-name">Hero name: </label>
       <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
     </div>
+
+    <div>
+      <ul>
+          <li *ngFor="let item of hero.items">
+              <app-item-detail [item]="item"></app-item-detail>
+          </li>
+      </ul>
+    </div>
+
     <button (click)="goBack()">go back</button>
   </div>
