@@ -57,3 +57,6 @@
     input {
       padding: .5rem;
     }
+    * {
+      text-decoration: none;
+  }

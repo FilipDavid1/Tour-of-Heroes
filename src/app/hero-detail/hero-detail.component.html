@@ -1,18 +1,38 @@
-<div *ngIf="hero">
-    <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
+<div class="container">
+  <div *ngIf="hero">
+    <h2>{{ hero.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{ hero.id }}</div>
+
     <div>
       <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name" />
     </div>
-
     <div>
-      <ul>
-          <li *ngFor="let item of hero.items">
-              <app-item-detail [item]="item"></app-item-detail>
-          </li>
-      </ul>
+      <span><label>Money: </label> </span>{{ hero.money }}
     </div>
+    <ng-container *ngFor="let div of divisions; let i = index">
+      <div class="div-btn">
+        <button type="button" (click)="toggleDiv(i)" class="btn btn-primary">
+          {{ div.visibility === false ? "Buy" : "Hide" }} Item
+        </button>
+      </div>
 
-    <button (click)="goBack()">go back</button>
+      <div class="items" *ngFor="let item of hero.items">
+        
+            <app-item-detail [item]="item"></app-item-detail>
+         
+      </div>
+
+      <div *ngIf="div.visibility" class="div-content">
+        <h2 class="header">Free Items:</h2>
+        <div class="items" *ngFor="let freeItem of hero.freeItems">
+         
+          <app-item-detail [item]="freeItem"></app-item-detail>
+          <button>Buy</button>
+          </div>
+      </div>
+    </ng-container>
   </div>
+
+  <button (click)="goBack()">go back</button>
+</div>

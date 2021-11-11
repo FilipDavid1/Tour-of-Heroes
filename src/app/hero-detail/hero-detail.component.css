@@ -1,5 +1,9 @@
 h2{
     text-align: center;
+    font-size: medium;
+}
+.header {
+  font-size: xx-large;
 }
 /* HeroDetailComponent's private CSS styles */
 label {
@@ -24,4 +28,8 @@ label {
     background-color: #eee;
     color: #ccc;
     cursor: auto;
+  }
+  .items {
+    background-color: #cfd8dc;
+    border-radius: 4px;
   }
