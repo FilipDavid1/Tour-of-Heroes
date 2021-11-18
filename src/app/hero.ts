@@ -5,5 +5,4 @@ export interface Hero{
     name: string;
     money: number;
     items: Item[];
-    freeItems: Item[];
 }
