@@ -1,0 +1,15 @@
+<ul>
+    <li *ngFor="let item of freeItems">
+        <a *ngIf="item.isAvailable && freeItems.length > 0; else displayNone" >
+            <span>{{item.id}}</span> {{item.name + " price:" + item.price}}
+            <button (click)="buyFreeItem(item)">Buy!!!</button>
+        </a>
+        <ng-template #displayNone>
+            <h2>this free item: {{item.name}} has been bought!</h2>
+        </ng-template>
+    </li>
+</ul>
+
+<div>
+   <button (click)="goBack()">go back</button>
+</div>
