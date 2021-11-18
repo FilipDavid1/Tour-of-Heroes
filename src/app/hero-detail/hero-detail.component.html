@@ -9,13 +9,9 @@
     </div>
     <div>
       <span><label>Money: </label> </span>{{ hero.money }}
+      <button (click)="click()"><a routerLink="/free-items/{{hero.id}}">Buy Item</a></button>
     </div>
-    <ng-container *ngFor="let div of divisions; let i = index">
-      <div class="div-btn">
-        <button type="button" (click)="toggleDiv(i)" class="btn btn-primary">
-          {{ div.visibility === false ? "Buy" : "Hide" }} Item
-        </button>
-      </div>
+   
 
       <div class="items" *ngFor="let item of hero.items">
         
@@ -23,15 +19,7 @@
          
       </div>
 
-      <div *ngIf="div.visibility" class="div-content">
-        <h2 class="header">Free Items:</h2>
-        <div class="items" *ngFor="let freeItem of hero.freeItems">
-         
-          <app-item-detail [item]="freeItem"></app-item-detail>
-          <button>Buy</button>
-          </div>
-      </div>
-    </ng-container>
+      
   </div>
 
   <button (click)="goBack()">go back</button>

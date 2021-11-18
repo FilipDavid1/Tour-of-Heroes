@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { FItems } from '../mock-items';
+
 
 @Component({
   selector: 'app-hero-detail',
@@ -12,17 +14,9 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
+  
 
-  divisions = [
-    {
-      content: '',
-      visibility: false
-    }
-  ];
 
-  toggleDiv(index: number) {
-    this.divisions[index].visibility = !this.divisions[index].visibility;
-  }
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +28,7 @@ export class HeroDetailComponent implements OnInit {
     this.getHero();
     
   }
+  click(): void {  }
 
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -44,4 +39,6 @@ export class HeroDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+ 
 }

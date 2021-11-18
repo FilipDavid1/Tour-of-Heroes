@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { ItemsComponent } from './items/items.component';
+import { FreeItemsComponent } from './free-items/free-items.component';
 
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'items', component: ItemsComponent },
+  { path: 'free-items/:id', component: FreeItemsComponent}
 ];
 
 @NgModule({
