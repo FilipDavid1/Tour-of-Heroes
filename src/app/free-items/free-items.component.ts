@@ -44,7 +44,7 @@ export class FreeItemsComponent implements OnInit {
   }
 
   buyFreeItem(item: Item): void {
-    if (this.heroCash > item.price){
+    if (this.heroCash >= item.price){
       this.heroCash -=  item.price;
       item.isAvailable = false;
       this.hero.items.push(item);

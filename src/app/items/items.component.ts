@@ -22,7 +22,7 @@ export class ItemsComponent implements OnInit {
   
   onSelect(item: Item): void {
     this.selectedItem = item;
-    this.messageService.add('ItemsComponent: Selected item id=$(item.id)');
+    this.messageService.add(`ItemsComponent: Selected item id=${item.id}`);
   }
 
   getItems(): void {
