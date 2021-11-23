@@ -17,7 +17,7 @@ export class FreeItemsComponent implements OnInit {
 
   freeItems = FItems;
   hero: Hero;
-  heroCash: number;
+  
 
 
   constructor(
@@ -40,12 +40,12 @@ export class FreeItemsComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
-      this.heroCash = this.hero.money;
+      
   }
 
   buyFreeItem(item: Item): void {
-    if (this.heroCash >= item.price){
-      this.heroCash -=  item.price;
+    if (this.hero.money >= item.price){
+      this.hero.money -=  item.price;
       item.isAvailable = false;
       this.hero.items.push(item);
     }
