@@ -31,7 +31,7 @@ export class ItemsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getItems;
+    this.getItems();
   }
 
 }
