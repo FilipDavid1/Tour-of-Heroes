@@ -3,7 +3,12 @@
     <li *ngFor= "let item of items"
         [class.selected]="item === selectedItem"
         (click)="onSelect(item)">
-        <span class="badge">{{item.id}}</span> <span id="itemName"> {{item.name}}</span>
+        <a *ngIf="item.isAvailable; else displayNone">
+            <span class="badge">{{item.id}}</span> <span id="itemName"> {{item.name}}</span>
+        </a>
+        <ng-template #displayNone>
+            <p></p>
+        </ng-template>
     </li>
 </ul>
 
