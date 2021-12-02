@@ -13,27 +13,29 @@ export class HeroService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  private heroUrl = 'api/heroes'; //url to web api
+  private heroesUrl = 'api/heroes'; //url to web api
 
   /* get heroes from server*/
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroUrl).pipe(
+    return this.http.get<Hero[]>(this.heroesUrl).pipe(
       tap(_ => this.log('fetched heroes')),
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
   }
-
+  /* GET hero by id. Will 404 if id not found */
   getHero(id: number): Observable<Hero> {
-    const hero = HEROES.find(h => h.id === id)!;
-    this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return of(hero);
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      tap(_ => this.log(`fetched hero id=${id}`)),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
   }
-  private log(message: string){
+  private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
 
   /* Handle http operation failed*/
-  private handleError<T>(operation = 'operation', result?: T){
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       console.error(error);
@@ -42,5 +44,23 @@ export class HeroService {
 
       return of(result as T);
     }
+  }
+
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap(_ => this.log(`update hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
+      catchError(this.handleError<Hero>('addHero'))
+    );
   }
 }
