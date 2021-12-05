@@ -1,4 +1,4 @@
-<h2>Items:</h2>
+<h2>fjhgishdfighsdf:</h2>
 <ul class="items">
     <li *ngFor= "let item of items"
         [class.selected]="item === selectedItem"
@@ -11,6 +11,14 @@
         </ng-template>
     </li>
 </ul>
+<div>
+    <label for="new-item">Item name: </label>
+    <input id="new-item" #itemName />
+
+    <button class="add-button" (click)="add(itemName.value); itemName.value=''">
+      Add Item
+    </button>
+</div>
 
 
 <app-item-detail [item]="selectedItem"></app-item-detail>

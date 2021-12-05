@@ -33,5 +33,12 @@ export class ItemsComponent implements OnInit {
   ngOnInit(): void {
     this.getItems();
   }
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.itemService.addItem({ name } as Item).subscribe(item => {
+      this.items.push(item);
+    });
+  }
 
 }
