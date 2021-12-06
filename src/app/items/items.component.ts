@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message.service';
@@ -15,6 +16,7 @@ import { FItems } from '../mock-items';
 export class ItemsComponent implements OnInit {
 
   items = FItems;
+  debug = "kako";
 
   constructor(private itemService: ItemService, private messageService: MessageService ) { }
 
@@ -36,9 +38,8 @@ export class ItemsComponent implements OnInit {
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.itemService.addItem({ name } as Item).subscribe(item => {
-      this.items.push(item);
-    });
+    this.itemService.addItem({ name } as Item).subscribe(item => { this.items.push(item); });
+    
   }
 
 }
