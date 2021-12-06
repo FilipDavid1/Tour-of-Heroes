@@ -3,9 +3,9 @@
     <h2>{{item.name | uppercase}} Details</h2>
     <div>
         <label for="item-name">Item name: </label>
-        <input id="item-name" [(ngModel)]="item.name" placeholder="Hero name" />
+        <input id="item-name" [(ngModel)]="item.name" placeholder="Item name" />
       </div>
     <div id="itemId"><span>id: </span>{{item.id}}</div>
-    <div id="itemPrice"><span>price: </span>{{item.price}}</div>  
+    <div for="itemPrice"><span>price: </span><input id="itemPrice" [(ngModel)]="item.price" placeholder="Item price" /></div>  
     <button (click)="save()">save</button>  
 </div>

@@ -2,7 +2,7 @@ import { Hero } from './hero';
 import { Items } from './mock-items';
 
 export const HEROES: Hero[] = [
-  { id: 11, name: 'Dr Nice', money: 10000, items: [] },
+  { id: 11, name: 'Dr Nice', money: 10000, items: [Items[7], Items[0]] },
   { id: 12, name: 'Narco', money: 10000, items: [Items[1], Items[5]] },
   { id: 13, name: 'Bombasto', money: 10000000000, items: [Items[9], Items[2]] },
   { id: 14, name: 'Celeritas', money: 10000, items: [Items[6], Items[1]] },
