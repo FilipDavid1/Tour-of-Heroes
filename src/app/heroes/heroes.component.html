@@ -1,12 +1,21 @@
 <h2>My Heroes</h2>
+<select (change)="dropDownChanged($event)" >
+  <option>sort by id</option>
+  <option>sort by name</option>
+  <option>sort by money</option>
+</select>
+
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}} 
     </a>
+
     <button class="delete-button" title="delete hero" (click)="delete(hero);">
       x
     </button>
+    
   </li>
 </ul> 
 <div>
