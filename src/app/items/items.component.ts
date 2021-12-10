@@ -16,7 +16,7 @@ import { FItems } from '../mock-items';
 export class ItemsComponent implements OnInit {
 
   items = FItems;
-  debug = "kako";
+
 
   constructor(private itemService: ItemService, private messageService: MessageService ) { }
 
@@ -40,6 +40,10 @@ export class ItemsComponent implements OnInit {
     if (!name) { return; }
     this.itemService.addItem({ name } as Item).subscribe(item => { this.items.push(item); });
     
+  }
+  delete(item: Item): void {
+    this.items = this.items.filter(h => h !== item);
+    this.itemService.deleteItem(item.id).subscribe();
   }
 
 }

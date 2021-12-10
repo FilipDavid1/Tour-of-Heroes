@@ -69,6 +69,27 @@ export class ItemService {
     );
   }
 
+  deleteItem(id: number): Observable<Item>{
+    const url = `${this.itemUrl}/${id}`;
+
+    return this.http.delete<Item>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted item id=${id}`)),
+    catchError(this.handleError<Item>('deleteItem'))
+    )
+  }
+
+  searchItems(iTerm: string): Observable<Item[]> {
+    if (!iTerm.trim()){
+      return of([]);
+    }
+    return this.http.get<Item[]>(`${this.itemUrl}/?name=${iTerm}`).pipe(
+      tap(x => x.length ?
+        this.log(`found items matching "${iTerm}"`) :
+        this.log(`no items matching "${iTerm}"`)),
+        catchError(this.handleError<Item[]>(`searchItems`, []))
+    );
+  }
+
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 }

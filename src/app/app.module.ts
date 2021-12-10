@@ -16,6 +16,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FreeItemsComponent } from './free-items/free-items.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { ItemSearchComponent } from './item-search/item-search.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     DashboardComponent,
     FreeItemsComponent,
     HeroSearchComponent,
+    ItemSearchComponent,
   ],
   imports: [
     BrowserModule,

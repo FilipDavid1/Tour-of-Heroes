@@ -1,9 +1,11 @@
-<h2>fjhgishdfighsdf:</h2>
+<h2>Free items:</h2>
+<app-item-search></app-item-search>
 <ul class="items">
     <li *ngFor= "let item of items"
         [class.selected]="item === selectedItem"
         (click)="onSelect(item)">
             <span class="badge">{{item.id}}</span> <span id="itemName"> {{item.name}}</span>
+            <button class="delete" title="delete item" (click)="delete(item)">x</button>
     </li>
 </ul>
 <div>
