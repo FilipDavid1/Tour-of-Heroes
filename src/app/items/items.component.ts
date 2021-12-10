@@ -45,5 +45,23 @@ export class ItemsComponent implements OnInit {
     this.items = this.items.filter(h => h !== item);
     this.itemService.deleteItem(item.id).subscribe();
   }
+  option: string = '';
+
+  dropDownChanged(event: any) {
+    this.option = event.target.value;
+
+
+    if (this.option == "sort by id") {
+      return this.items.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+    }
+    else if (this.option == "sort by name") {
+      return this.items.sort((a, b) => a.name.localeCompare(b.name));
+    }
+    else if (this.option == "sort by price") {
+      return this.items.sort((a, b) => a.price > b.price ? -1 : a.price < b.price ? 1 : 0);
+    }
+
+
+  }
 
 }

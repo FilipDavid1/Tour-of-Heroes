@@ -1,5 +1,10 @@
 <h2>Free items:</h2>
 <app-item-search></app-item-search>
+<select (change)="dropDownChanged($event)" >
+    <option>sort by id</option>
+    <option>sort by name</option>
+    <option>sort by price</option>
+  </select>
 <ul class="items">
     <li *ngFor= "let item of items"
         [class.selected]="item === selectedItem"
