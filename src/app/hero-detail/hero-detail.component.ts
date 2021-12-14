@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Item } from '../item';
+import { FItems, Items } from '../mock-items';
+import { ItemDetailComponent } from '../item-detail/item-detail.component';
 
 
 
@@ -48,6 +50,7 @@ export class HeroDetailComponent implements OnInit {
   sellItem(item: Item) {
     this.hero.money += item.price;
     item.isAvailable = true;
+    this.fItemEvent.emit(item);
     this.deleteItem(item);
   }
 
