@@ -8,5 +8,5 @@
     <div id="itemId"><span>id: </span>{{item.id}}</div>
     <div for="itemPrice"><span>price: </span><input id="itemPrice" [(ngModel)]="item.price" placeholder="Item price" /></div>  
     <button (click)="save()">save</button>  
-    <button *ngIf="!item.isAvailable" (click)="callParrentDelete()" (fItemEvent)="pushFreeItem(item)" >SALE!</button>
+    <button *ngIf="!item.isAvailable" (click)="callParrentDelete()" >SALE!</button>
 </div>

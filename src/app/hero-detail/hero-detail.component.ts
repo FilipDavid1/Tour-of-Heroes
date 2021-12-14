@@ -1,14 +1,11 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Item } from '../item';
-import { FItems, Items } from '../mock-items';
 import { ItemDetailComponent } from '../item-detail/item-detail.component';
-
-
 
 @Component({
   selector: 'app-hero-detail',
@@ -17,7 +14,11 @@ import { ItemDetailComponent } from '../item-detail/item-detail.component';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero;
-  fItemEvent = new EventEmitter();
+ 
+
+  @ViewChild(ItemDetailComponent) itemDetail: any;
+
+  freeItems: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -50,7 +51,7 @@ export class HeroDetailComponent implements OnInit {
   sellItem(item: Item) {
     this.hero.money += item.price;
     item.isAvailable = true;
-    this.fItemEvent.emit(item);
+    this.freeItems = this.itemDetail.pushFreeItem(item);
     this.deleteItem(item);
   }
 
@@ -61,8 +62,6 @@ export class HeroDetailComponent implements OnInit {
     }
   }
 
-  pushItem(){
-    this.fItemEvent.emit();
-  }
+
  
 }

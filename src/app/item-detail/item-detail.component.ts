@@ -32,7 +32,7 @@ export class ItemDetailComponent implements OnInit {
     this.deleteEvent.emit();
   }
 
- public pushFreeItem(item: Item){
+  pushFreeItem(item: Item){
     FItems.push(item);
   }
 
