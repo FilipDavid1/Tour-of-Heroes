@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { Item } from '../item';
 
 
 
@@ -13,10 +14,8 @@ import { HeroService } from '../hero.service';
   styleUrls: [ './hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero | undefined;
-  
-
-
+  hero: Hero;
+  fItemEvent = new EventEmitter();
 
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +43,23 @@ export class HeroDetailComponent implements OnInit {
     if (this.hero) {
       this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
     }
+  }
+
+  sellItem(item: Item) {
+    this.hero.money += item.price;
+    item.isAvailable = true;
+    this.deleteItem(item);
+  }
+
+  deleteItem(item: Item) {
+    const itemIndex: number = this.hero.items.indexOf(item);
+    if(itemIndex !== -1){
+      this.hero.items.splice(itemIndex, 1);
+    }
+  }
+
+  pushItem(){
+    this.fItemEvent.emit();
   }
  
 }

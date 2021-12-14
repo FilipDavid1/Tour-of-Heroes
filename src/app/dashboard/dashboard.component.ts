@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 @Component({
   selector: 'app-dashboard',

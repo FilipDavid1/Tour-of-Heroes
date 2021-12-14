@@ -12,8 +12,10 @@
       <span class="badge">{{hero.id}}</span> {{hero.name}} 
     </a>
 
-    <button class="delete-button" title="delete hero" (click)="delete(hero);">x</button>
     
+    <button  class="delete-button" title="delete hero" (click)="delete(hero);" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
+    </button>
   </li>
 </ul> 
 <div>

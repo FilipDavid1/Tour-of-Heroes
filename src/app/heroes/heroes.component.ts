@@ -1,8 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { element } from 'protractor';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
+import { Component, NgModule, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 

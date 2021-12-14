@@ -17,6 +17,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FreeItemsComponent } from './free-items/free-items.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ItemSearchComponent } from './item-search/item-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +46,9 @@ import { ItemSearchComponent } from './item-search/item-search.component';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],

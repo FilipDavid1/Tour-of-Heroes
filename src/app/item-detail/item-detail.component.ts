@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
+import { FItems } from '../mock-items';
 
 
 @Component({
@@ -13,18 +14,26 @@ export class ItemDetailComponent implements OnInit {
 
   @Input() item?: Item;
 
+  @Output() deleteEvent = new EventEmitter();
+  
+
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
   }
   
-
   save(): void {
     if (this.item){
       this.itemService.updateItem(this.item);
     }
   }
 
-  
+  callParrentDelete() {
+    this.deleteEvent.emit();
+  }
+
+  pushFreeItem(item: Item){
+    FItems.push(item);
+  }
 
 }
