@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { FItems } from '../mock-items';
+
 
 
 @Component({
@@ -30,10 +32,6 @@ export class ItemDetailComponent implements OnInit {
 
   callParrentDelete() {
     this.deleteEvent.emit();
-  }
-
-  pushFreeItem(item: Item){
-    FItems.push(item);
   }
 
 }

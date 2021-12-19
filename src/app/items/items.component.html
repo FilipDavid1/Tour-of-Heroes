@@ -10,14 +10,14 @@
         [class.selected]="item === selectedItem"
         (click)="onSelect(item)">
             <span class="badge">{{item.id}}</span> <span id="itemName"> {{item.name}}</span>
-            <button class="delete" title="delete item" (click)="delete(item)">x</button>
+            <button mat-mini-fab class="delete" title="delete item" (click)="delete(item)"><mat-icon class="delete">delete</mat-icon></button>
     </li>
 </ul>
 <div>
     <label for="new-item">Item name: </label>
     <input id="new-item" #itemName />
 
-    <button class="add-button" (click)="add(itemName.value); itemName.value=''">
+    <button mat-raised-button color="primary" class="add-button" (click)="add(itemName.value); itemName.value=''">
       Add Item
     </button>
 </div>

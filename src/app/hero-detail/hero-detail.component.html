@@ -3,22 +3,24 @@
     <h2>{{ hero.name | uppercase }} Details</h2>
     <div><span>id: </span>{{ hero.id }}</div>
 
-    <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name" />
-    </div>
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <label for="hero-name">Hero name: </label>
+        <input matInput id="hero-name" [(ngModel)]="hero.name">
+      </mat-form-field>
+  
     <div>
       <span><label>Money: </label> </span>{{ hero.money }}
-      <button (click)="click()"><a routerLink="/free-items/{{hero.id}}">Buy Item</a></button>
+      <button mat-raised-button color="secondary" class="buttons" (click)="click()"><a routerLink="/free-items/{{hero.id}}">Buy Item</a></button>
     </div>
    
 
-      <div class="items" *ngFor="let item of hero.items">
-            <app-item-detail [item]="item" (deleteEvent)="sellItem(item)"></app-item-detail>        
+      <div color="primary" class="items" *ngFor="let item of hero.items">
+            <app-item-detail mat-stroked-button color="secondary" [item]="item" (deleteEvent)="sellItem(item)"></app-item-detail>        
       </div>
 
       
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button class="buttons" mat-flat-button color="primary" (click)="goBack()">go back</button>
+  <button class="buttons" mat-flat-button color="primary" (click)="save()">save</button>
 </div>

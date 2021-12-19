@@ -29,7 +29,8 @@ label {
     color: #ccc;
     cursor: auto;
   }
-  .items {
-    background-color: #cfd8dc;
-    border-radius: 4px;
+    .buttons {
+  
+    padding: 5px;
+    margin: 5px;
   }

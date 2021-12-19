@@ -17,7 +17,7 @@
       position: relative;
       left: 0;
       background-color: #EEE;
-      margin: .5em;
+      margin: 20px;
       padding: .3em 0;
       height: 1.6em;
       border-radius: 4px;
@@ -74,3 +74,7 @@
     background-color: #525252;
     color: white;
   }
+  .add-button {
+    margin: 5px;
+  }
+ 

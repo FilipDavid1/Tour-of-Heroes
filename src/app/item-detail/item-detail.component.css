@@ -4,3 +4,8 @@ h2{
 .items {
     display: none;
 }
+.itemDetail{
+    background-color: rgb(252, 248, 248);
+    border-radius: 4px;
+    margin: 5px;
+}

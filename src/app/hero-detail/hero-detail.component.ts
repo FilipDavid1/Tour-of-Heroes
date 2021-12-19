@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Item } from '../item';
-import { ItemDetailComponent } from '../item-detail/item-detail.component';
+import { FItems } from '../mock-items';
 
 @Component({
   selector: 'app-hero-detail',
@@ -15,8 +15,6 @@ import { ItemDetailComponent } from '../item-detail/item-detail.component';
 export class HeroDetailComponent implements OnInit {
   hero: Hero;
  
-
-  @ViewChild(ItemDetailComponent) itemDetail: any;
 
   freeItems: any;
 
@@ -51,7 +49,7 @@ export class HeroDetailComponent implements OnInit {
   sellItem(item: Item) {
     this.hero.money += item.price;
     item.isAvailable = true;
-    this.freeItems = this.itemDetail.pushFreeItem(item);
+    FItems.push(item);
     this.deleteItem(item);
   }
 
@@ -63,5 +61,6 @@ export class HeroDetailComponent implements OnInit {
   }
 
 
+  
  
 }

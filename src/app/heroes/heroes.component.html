@@ -13,7 +13,7 @@
     </a>
 
     
-    <button  class="delete-button" title="delete hero" (click)="delete(hero);" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+    <button  class="delete-button" title="delete hero" (click)="delete(hero);" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
       <mat-icon>delete</mat-icon>
     </button>
   </li>
@@ -22,7 +22,7 @@
     <label for="new-hero">Hero name: </label>
     <input id="new-hero" #heroName />
 
-    <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+    <button mat-flat-button color="primary" class="add-button" (click)="add(heroName.value); heroName.value=''">
       Add hero
     </button>
 </div>
