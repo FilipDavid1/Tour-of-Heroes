@@ -1,4 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatSelectChange } from '@angular/material/select';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
@@ -34,20 +36,25 @@ export class HeroesComponent implements OnInit {
 
   option: string = '';
 
-  dropDownChanged(event: any) {
-    this.option = event.target.value;
+  dropDownChanged(event: MatSelectChange) {
+    
 
 
-    if (this.option == "sort by id") {
+    if (event.value == "Id") {
       return this.heroes.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
     }
-    else if (this.option == "sort by name") {
+    else if (event.value == "Name") {
       return this.heroes.sort((a, b) => a.name.localeCompare(b.name));
     }
-    else if (this.option == "sort by money") {
+    else if (event.value == "Money") {
       return this.heroes.sort((a, b) => a.money > b.money ? -1 : a.money < b.money ? 1 : 0);
     }
 
 
   }
+
+    selectedOrder = new FormControl();
+    orders: string[] = ['Id', 'Name', 'Money'];
+    
+    
 }

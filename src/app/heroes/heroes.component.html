@@ -1,9 +1,15 @@
 <h2>My Heroes</h2>
-<select (change)="dropDownChanged($event)" >
-  <option>sort by id</option>
-  <option>sort by name</option>
-  <option>sort by money</option>
-</select>
+
+<section>
+  <mat-form-field appearance="outline">
+    <mat-label>Order by:</mat-label>
+    <mat-select [formControl]="selectedOrder" (selectionChange)="dropDownChanged($event)">
+      <mat-option *ngFor="let order of orders" [value]="order" >
+        {{ order }} 
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</section>
 
 
 <ul class="heroes">
