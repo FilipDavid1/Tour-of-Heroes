@@ -19,7 +19,6 @@ export class FreeItemsComponent implements OnInit {
   hero: Hero;
   
 
-
   constructor(
     private itemService: ItemService,
     private heroService: HeroService,

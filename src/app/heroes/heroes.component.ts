@@ -34,12 +34,10 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero.id).subscribe();
   }
 
-  option: string = '';
+
 
   dropDownChanged(event: MatSelectChange) {
     
-
-
     if (event.value == "Id") {
       return this.heroes.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
     }
@@ -49,12 +47,7 @@ export class HeroesComponent implements OnInit {
     else if (event.value == "Money") {
       return this.heroes.sort((a, b) => a.money > b.money ? -1 : a.money < b.money ? 1 : 0);
     }
-
-
   }
-
     selectedOrder = new FormControl();
     orders: string[] = ['Id', 'Name', 'Money'];
-    
-    
 }

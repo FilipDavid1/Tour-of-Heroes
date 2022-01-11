@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatSelectChange } from '@angular/material/select';
 
 
 import { Item } from '../item';
@@ -45,23 +47,20 @@ export class ItemsComponent implements OnInit {
     this.items = this.items.filter(h => h !== item);
     this.itemService.deleteItem(item.id).subscribe();
   }
-  option: string = '';
+  
 
-  dropDownChanged(event: any) {
-    this.option = event.target.value;
-
-
-    if (this.option == "sort by id") {
+  dropDownChanged(event: MatSelectChange) {
+    
+    if (event.value == "Id") {
       return this.items.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
     }
-    else if (this.option == "sort by name") {
+    else if (event.value == "Name") {
       return this.items.sort((a, b) => a.name.localeCompare(b.name));
     }
-    else if (this.option == "sort by price") {
+    else if (event.value == "Price") {
       return this.items.sort((a, b) => a.price > b.price ? -1 : a.price < b.price ? 1 : 0);
     }
-
-
   }
-
+  selectedOrder = new FormControl();
+  orders: string[] = ['Id', 'Name', 'Price'];
 }
