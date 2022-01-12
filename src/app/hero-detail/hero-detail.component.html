@@ -1,16 +1,20 @@
 <div class="container">
   <div *ngIf="hero">
     <h2>{{ hero.name | uppercase }} Details</h2>
-    <div><span>id: </span>{{ hero.id }}</div>
+
+    <div class="hero-stats">
+    <span>id: </span>{{ hero.id }} <br>
 
     
       <mat-form-field class="example-full-width" appearance="fill">
         <label for="hero-name">Hero name: </label>
         <input matInput id="hero-name" [(ngModel)]="hero.name">
       </mat-form-field>
-  
-    <div>
-      <span><label>Money: </label> </span>{{ hero.money }}
+      <br>
+    
+      <span><label>Life: </label> </span>{{ hero.life }} <br>
+      <span><label>Strenght: </label> </span>{{ hero.strenght }} <br>
+      <span><label>Money: </label> </span>{{ hero.money }} <br>
       <button mat-raised-button color="secondary" class="buttons" (click)="click()"><a routerLink="/free-items/{{hero.id}}">Buy Item</a></button>
     </div>
    
