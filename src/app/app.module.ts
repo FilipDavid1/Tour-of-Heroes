@@ -24,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 
 
@@ -39,6 +40,7 @@ import { MatInputModule } from '@angular/material/input';
     FreeItemsComponent,
     HeroSearchComponent,
     ItemSearchComponent,
+    HeroFormComponent,
   ],
   imports: [
     BrowserModule,

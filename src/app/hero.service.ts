@@ -63,7 +63,7 @@ export class HeroService {
     );
   }
 
-  /* Delete the hero from the server*/
+  /* Delete the hero from the server*/ 
   deleteHero(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;
 

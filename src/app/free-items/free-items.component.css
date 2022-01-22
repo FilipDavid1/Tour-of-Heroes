@@ -13,3 +13,8 @@ button {
     color: #ccc;
     cursor: auto;
   }
+  .button {
+
+    padding: 5px;
+    margin: 5px;
+  }
