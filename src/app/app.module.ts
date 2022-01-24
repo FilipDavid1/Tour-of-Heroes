@@ -25,6 +25,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { CommonModule } from '@angular/common';  
+
+
 
 
 
@@ -60,7 +63,10 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent],

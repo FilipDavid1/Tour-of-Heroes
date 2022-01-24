@@ -1,10 +1,17 @@
 import { Item } from "./item";
 
-export interface Hero{
+export class Hero{
     id: number;
     name: string;
     money: number;
     items: Item[];
     life: number;
-    strenght: number;
+    strength: number;
+
+    constructor(
+        name: string,
+        money: number,
+        life: number,
+        strength: number,
+      ) {  }
 }

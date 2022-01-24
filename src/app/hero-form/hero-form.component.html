@@ -1,0 +1,46 @@
+<div class="border-container">
+  <h1>Hero Form</h1>
+  <form #heroForm="ngForm">
+    <div class="form-group">
+      <mat-form-field  appearance="fill">
+      <mat-label for="name">Name</mat-label>
+      <input matInput type="text" class="form-control" id="name" required maxlength="20"
+        [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="model.name" name="name" #name="ngModel">
+        <div class="alert"  *ngIf="name.touched && !name.valid">Name is required!</div>
+    </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field  appearance="fill">
+      <mat-label for="money">Money</mat-label>
+      <input matInput type="number"  class="form-control" required name="money" #money="ngModel" [(ngModel)]="model.money">
+
+    <div class="alert"  *ngIf="money.touched && !money.valid">Money is required</div>
+  </mat-form-field>
+    </div>
+
+    <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label for="life">Life</mat-label>
+      <input matInput type="num"  class="form-control" required pattern="^$|^([0-9]|[0]|[1][0])?"
+        [class.is-invalid]="life.invalid && life.touched" name="life" [(ngModel)]="model.life" #life="ngModel">
+        <div class="alert"  *ngIf="life.touched && life.value > 10 || life.touched && life.value <= 0 ">Must be number from range 1-10</div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+      <mat-label for="strength">Strength</mat-label>
+      <input matInput type="number" class="form-control" required pattern="^$|^([0-9]|[0]|[1][0])?"
+        [class.is-invalid]="strength.invalid && strength.touched" name="stength" [(ngModel)]="model.strength"
+        #strength="ngModel">  
+        <br>
+        <div class="alert"  *ngIf="strength.touched && strength.value > 10 || strength.touched && strength.value <= 0">Must be number from range 1-10</div>
+      </mat-form-field>
+    </div>
+
+    <button mat-flat-button color="primary" type="submit" (click)="onSubmit()" class="buttons" [disabled]="!heroForm.form.valid"
+      routerLink="/heroes">Submit</button>
+      <button class="buttons" mat-flat-button color="primary" (click)="goBack()">go back</button>
+  </form>
+</div>

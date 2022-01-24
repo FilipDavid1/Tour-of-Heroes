@@ -25,10 +25,7 @@
   </li>
 </ul> 
 <div>
-    <label for="new-hero">Hero name: </label>
-    <input id="new-hero" #heroName />
-
-    <button mat-flat-button color="primary" class="add-button" (click)="add(heroName.value); heroName.value=''">
-      Add hero
-    </button>
+  <a mat-raised-button color="primary" [routerLink]="['/hero-form']">Create hero</a>
 </div>
+
+
