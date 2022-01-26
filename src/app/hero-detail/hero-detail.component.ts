@@ -6,6 +6,7 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Item } from '../item';
 import { FItems } from '../mock-items';
+import { ItemService } from '../item.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -21,7 +22,8 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
+    private location: Location,
+    private itemService: ItemService
   ) {}
 
   ngOnInit(): void {
@@ -49,8 +51,7 @@ export class HeroDetailComponent implements OnInit {
   sellItem(item: Item) {
     this.hero.money += item.price;
     item.isAvailable = true;
-    FItems.push(item);
-    this.deleteItem(item);
+    this.itemService.addItem(item).subscribe(item => this.deleteItem(item));
   }
 
   deleteItem(item: Item) {

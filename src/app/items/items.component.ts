@@ -6,7 +6,7 @@ import { MatSelectChange } from '@angular/material/select';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message.service';
-import { FItems } from '../mock-items';
+
 
 
 
@@ -17,7 +17,7 @@ import { FItems } from '../mock-items';
 })
 export class ItemsComponent implements OnInit {
 
-  items = FItems;
+  items: Item[];
 
 
   constructor(private itemService: ItemService, private messageService: MessageService ) { }

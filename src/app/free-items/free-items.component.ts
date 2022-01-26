@@ -4,8 +4,9 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { ItemService } from '../item.service';
 import { ActivatedRoute } from '@angular/router';
-import { FItems } from '../mock-items';
+
 import { Location } from '@angular/common';
+
 
 
 @Component({
@@ -15,8 +16,9 @@ import { Location } from '@angular/common';
 })
 export class FreeItemsComponent implements OnInit {
 
-  freeItems = FItems;
+  freeItems: Item[];
   hero: Hero;
+  itemsToBuy: Item[] = [];
   
 
   constructor(
@@ -47,14 +49,17 @@ export class FreeItemsComponent implements OnInit {
       this.hero.money -=  item.price;
       item.isAvailable = false;
       this.hero.items.push(item);
+      this.itemService.updateItem(item).subscribe();
     }
   }
 
   goBack(): void {
     this.location.back();
   }
+
   save(): void {
     if (this.hero) {
+      
       this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
     }
   }

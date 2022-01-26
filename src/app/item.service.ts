@@ -13,6 +13,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ItemService {
 
+
   private itemUrl = 'api/items'; //url to web api
 
   private log(message: string) {
@@ -53,7 +54,7 @@ export class ItemService {
 
   updateItem(item: Item): Observable<any> {
     return this.http.put(this.itemUrl, item, this.httpOptions).pipe(
-      tap(_ => this.log(`updated item id=${item.id}`)),
+      tap(_ => this.log(`updated item id=${item}`)),
       catchError(this.handleError<any>('updateItem'))
     )
   }

@@ -2,7 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
-import { FItems } from '../mock-items';
+
 
 
 
