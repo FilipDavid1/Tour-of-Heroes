@@ -7,6 +7,8 @@ import { ItemsComponent } from './items/items.component';
 import { FreeItemsComponent } from './free-items/free-items.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { ItemFormComponent } from './item-form/item-form.component';
+
 
 
 
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'items', component: ItemsComponent },
   { path: 'free-items/:id', component: FreeItemsComponent},
   { path: 'hero-form', component: HeroFormComponent },
+  { path: 'item-form', component: ItemFormComponent },
 
 ];
 

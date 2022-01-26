@@ -25,7 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HeroFormComponent } from './hero-form/hero-form.component';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { ItemFormComponent } from './item-form/item-form.component';  
 
 
 
@@ -44,6 +45,7 @@ import { CommonModule } from '@angular/common';
     HeroSearchComponent,
     ItemSearchComponent,
     HeroFormComponent,
+    ItemFormComponent,
   ],
   imports: [
     BrowserModule,

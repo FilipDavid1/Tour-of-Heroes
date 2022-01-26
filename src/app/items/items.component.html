@@ -19,12 +19,7 @@
     </li>
 </ul>
 <div>
-    <label for="new-item">Item name: </label>
-    <input id="new-item" #itemName />
-
-    <button mat-raised-button color="primary" class="add-button" (click)="add(itemName.value); itemName.value=''">
-      Add Item
-    </button>
+    <a mat-raised-button color="primary" [routerLink]="['/item-form']">Create item</a>
 </div>
 
 <app-item-detail [item]="selectedItem"></app-item-detail>
