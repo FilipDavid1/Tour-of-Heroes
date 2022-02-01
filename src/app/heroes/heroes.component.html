@@ -14,10 +14,19 @@
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}} 
-    </a>
-
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          <button class="detail" mat-raised-button color="primary" routerLink="/detail/{{hero.id}}">hero detail</button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <ul><li *ngFor="let item of hero.items">
+        <span>{{item.name}}</span>
+      </li></ul>
+    </mat-expansion-panel>
     
     <button *ngIf="isAdmin == true" class="delete-button" title="delete hero" (click)="delete(hero);" mat-mini-fab color="primary">
       <mat-icon>delete</mat-icon>

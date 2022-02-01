@@ -35,7 +35,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -83,7 +83,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatToolbarModule,
     MatMenuModule,
     MatProgressSpinnerModule,
-
+    MatExpansionModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
