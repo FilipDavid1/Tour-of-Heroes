@@ -26,7 +26,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { CommonModule } from '@angular/common';
-import { ItemFormComponent } from './item-form/item-form.component';  
+import { ItemFormComponent } from './item-form/item-form.component';
+import { LoginComponent } from './login/login.component';
+ 
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 
 
@@ -46,6 +55,7 @@ import { ItemFormComponent } from './item-form/item-form.component';
     ItemSearchComponent,
     HeroFormComponent,
     ItemFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +77,12 @@ import { ItemFormComponent } from './item-form/item-form.component';
     MatInputModule,
     ReactiveFormsModule,
     CommonModule,
-    
+    MatCardModule,
+    MatDialogModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
 
   ],
   providers: [],

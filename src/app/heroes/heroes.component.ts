@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-heroes',
@@ -12,10 +13,13 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  isAdmin: boolean;
+
+  constructor(private heroService: HeroService, private loginService: LoginService) { }
 
   ngOnInit() {
     this.getHeroes();
+    this.isAdmin = this.loginService.getIsAdmin();
   }
 
   getHeroes(): void {

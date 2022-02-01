@@ -20,6 +20,7 @@ export class ItemService {
     this.messageService.add(`ItemService: ${message}`);
   }
 
+  
   /* get items from the server */
   getItems(): Observable<Item[]> {
     return this.http.get<Item[]>(this.itemUrl).pipe(

@@ -117,7 +117,7 @@
     </svg>
   </div>
   <!--Heroes and Items-->
-  <nav>
+  <nav *ngIf="router.url !== '/login'">
     <a mat-raised-button color="primary" [routerLink]="['/dashboard']">Dashboard</a>
   
     <a mat-raised-button color="primary" [routerLink]="['/heroes']">Heroes</a>

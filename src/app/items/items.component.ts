@@ -5,7 +5,10 @@ import { MatSelectChange } from '@angular/material/select';
 
 import { Item } from '../item';
 import { ItemService } from '../item.service';
+import { LoginService } from '../login.service';
+import { LoginComponent } from '../login/login.component';
 import { MessageService } from '../message.service';
+
 
 
 
@@ -18,15 +21,19 @@ import { MessageService } from '../message.service';
 export class ItemsComponent implements OnInit {
 
   items: Item[];
+  login: LoginComponent;
+  isAdmin: boolean;
+  
 
 
-  constructor(private itemService: ItemService, private messageService: MessageService ) { }
+  constructor(private itemService: ItemService, private messageService: MessageService, private loginService: LoginService) { }
 
   selectedItem?: Item;
   
   onSelect(item: Item): void {
     this.selectedItem = item;
     this.messageService.add(`ItemsComponent: Selected item id=${item.id}`);
+
   }
 
   getItems(): void {
@@ -36,6 +43,7 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getItems();
+    this.isAdmin = this.loginService.getIsAdmin();
   }
   add(name: string): void {
     name = name.trim();

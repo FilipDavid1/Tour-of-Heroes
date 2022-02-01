@@ -9,12 +9,14 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { ItemFormComponent } from './item-form/item-form.component';
 
+import { LoginComponent } from './login/login.component';
+
 
 
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'item-detail/:id', component: ItemDetailComponent },
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: 'free-items/:id', component: FreeItemsComponent},
   { path: 'hero-form', component: HeroFormComponent },
   { path: 'item-form', component: ItemFormComponent },
+  { path: 'login', component: LoginComponent },
 
 ];
 

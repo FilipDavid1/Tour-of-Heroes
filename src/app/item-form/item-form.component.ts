@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { ItemService } from '../item.service';
 import { Item } from '../item';
+import { LoginComponent } from '../login/login.component';
+
 
 
 @Component({
