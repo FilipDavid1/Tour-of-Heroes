@@ -19,7 +19,7 @@
     </a>
 
     
-    <button  class="delete-button" title="delete hero" (click)="delete(hero);" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+    <button *ngIf="isAdmin == true" class="delete-button" title="delete hero" (click)="delete(hero);" mat-mini-fab color="primary">
       <mat-icon>delete</mat-icon>
     </button>
   </li>

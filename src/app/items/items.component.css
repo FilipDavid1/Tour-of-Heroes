@@ -64,15 +64,13 @@
     position: absolute;
     left: 210px;
     top: 5px;
-    background-color: white;
-    color:  #525252;
     font-size: 1.1rem;
     padding: 1px 10px 3px 10px;
   }
   
   button.delete:hover {
-    background-color: #525252;
-    color: white;
+    background-color: white;
+    color: black;
   }
   .add-button {
     margin: 5px;
